@@ -17,7 +17,7 @@ public class Constants {
     public static FollowerConstants followerConstants = new FollowerConstants()
             .mass(4);
 
-    public static PathConstraints pathConstraints = new PathConstraints(0.99, 100, 1, 1);
+    public static PathConstraints pathConstraints = new PathConstraints(0.81, 100, 0.4, 0.4);
 
     public static Follower createFollower(HardwareMap hardwareMap) {
 
@@ -28,7 +28,7 @@ public class Constants {
     }
 
     public static MecanumConstants driveConstants = new MecanumConstants()
-            .maxPower(0.7)
+            .maxPower(1)
             .rightFrontMotorName("df")
             .rightRearMotorName("ds")
             .leftRearMotorName("ss")

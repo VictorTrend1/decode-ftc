@@ -39,18 +39,28 @@
         }
         @Override
         public void loop(){
-            Pose pozitie = follower.getPose();
-
             follower.update();
+            Pose pozitie = follower.getPose();
             telemetrie.update();
             follower.setTeleOpDrive(
-                    -gamepad1.left_stick_y,
-                    -gamepad1.left_stick_x,
-                    -gamepad1.right_stick_x,
+                    -gamepad1.left_stick_y * 0.75,
+                    -gamepad1.left_stick_x * 0.75,
+                    -gamepad1.right_stick_x * 0.75,
                     true
             );
+            follower.update();
+            if (gamepad1.left_bumper){
+                tureta.tureta_manual_minus();
+            }
+            if (gamepad1.right_bumper){
+                tureta.tureta_manual_plus();
+            }
+            if(gamepad1.dpadDownWasPressed()){
+                tureta.reset();
+            }
+
             tureta.aiming(motoare.tureta,Constants.xtarget_red, Constants.ytarget_red, pozitie);
-            telemetrie.debug("pozitie motor: ", motoare.tureta.getCurrentPosition());
+            telemetrie.debug("pozitie motor: ", follower.getPose());
             telemetrie.debug("pozitie: ", follower.getPose());
             telemetrie.debug("acceleratie: ", follower.getVelocity());
         }

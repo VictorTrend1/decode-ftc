@@ -9,9 +9,8 @@ public class motoare {
 
     public motoare(HardwareMap hardwareMap){
         tureta = hardwareMap.get(DcMotor.class,"tureta");
-        tureta.setTargetPosition(0);
+        tureta.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         tureta.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        tureta.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
     }
     public static void setpos(Servo servo, double pos){
