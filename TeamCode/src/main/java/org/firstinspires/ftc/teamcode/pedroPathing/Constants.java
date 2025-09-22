@@ -13,7 +13,7 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 
 public class Constants {
 
-    public static double xtarget_red = 11, ytarget_red = 137;
+    public static double xtarget_red = 0.11, ytarget_red = 0.13;
     public static FollowerConstants followerConstants = new FollowerConstants()
             .mass(4);
 

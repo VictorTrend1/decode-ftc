@@ -60,8 +60,10 @@
             }
 
             tureta.aiming(motoare.tureta,Constants.xtarget_red, Constants.ytarget_red, pozitie);
-            telemetrie.debug("pozitie motor: ", follower.getPose());
             telemetrie.debug("pozitie: ", follower.getPose());
+            telemetrie.debug("x: ", follower.getPose().getX());
+            telemetrie.debug("y: ", follower.getPose().getY());
+            telemetrie.debug("heading: ", follower.getPose().getHeading());
             telemetrie.debug("acceleratie: ", follower.getVelocity());
         }
     }
